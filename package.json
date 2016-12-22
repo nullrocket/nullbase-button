@@ -39,7 +39,7 @@
     "loader.js": "^4.0.1",
     "ember-route-action-helper": "2.0.0",
 
-    "nullbase-basic-layout": "*"
+    "nullbase-basic-layout": "https://github.com/nullrocket/nullbase-basic-layout.git#0.0.0-alpha"
 
   },
   "keywords": [
