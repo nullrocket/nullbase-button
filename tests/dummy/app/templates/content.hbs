@@ -1,0 +1,86 @@
+<div>
+
+  {{nb-button text="show/hide" type="flat-text"   }}
+
+
+    {{nb-button text="OK" type="flat-text"    }}
+
+    {{nb-button text="test button" type="flat-text" on-tap=(route-action "alert")  }}
+
+    {{nb-button text="test button" type="flat-text" on-tap=(route-action "alert") disabled=true  }}
+
+    {{nb-button text="test button" type="flat-text"   text-color="#1976D2"
+                focused-background-color="#1976D2" focused-text-color="white" pressed-text-color="orange"
+                pressed-background-color="rgba(255,255,130,1)" }}
+
+    {{nb-button text="test button" type="flat-text"  theme=themes.DEFAULT ink=false}}
+
+</div>
+
+<div>
+  {{nb-button text="show/hide" type="raised-text"  on-tap=(action "toggleShowing"  )}}
+
+  {{#if showing}}
+    {{nb-button text="OK" type="raised-text"  on-tap=(action "alert" "bob" ) }}
+
+    {{nb-button text="test button" type="raised-text" on-tap=(action "alert")  }}
+
+    {{nb-button text="test button" type="raised-text" on-tap=(action "alert") disabled=true  }}
+
+    {{nb-button text="test button" type="raised-text"  on-tap=(action "alert" "bob" ) text-color="white"
+                background-color="#1976D2" focused-background-color="#1976D2" focused-text-color="white"
+                pressed-text-color="white" pressed-background-color="#1976D2" }}
+
+    {{nb-button text="test button" type="raised-text" on-tap=(action "alert") theme=themes.DEFAULT ink=false }}
+  {{/if}}
+</div>
+
+<div>
+  {{nb-button text="show/hide" type="flat-icon" icon="check" iconColor="white"  on-tap=(action "toggleShowing"  )
+              text-color="rgb(38, 126, 213)" }}
+
+  {{#if showing}}
+    {{nb-button text="OK" type="flat-icon" icon="check" iconColor="grey"  on-tap=(action "alert" "bob" )
+                text-color="rgb(38, 126, 213)" }}
+
+    {{nb-button text="test button" type="flat-icon" icon="check" iconColor="grey" on-tap=(action "alert")
+                text-color="green"}}
+
+    {{nb-button text="test button" type="flat-icon" icon="check" iconColor="grey" on-tap=(action "alert")
+                disabled=true  }}
+
+    {{nb-button text="test button" type="flat-icon"   on-tap=(action "alert" "bob" ) text-color="white"
+                background-color="#1976D2" focused-background-color="#1976D2" focused-text-color="white"
+                pressed-text-color="white" pressed-background-color="#1976D2" icon="check" iconColor="white"}}
+
+    {{nb-button text="test button" type="flat-icon" icon="check" iconColor="grey" on-tap=(action "alert")
+                theme=themes.DEFAULT ink=false }}
+  {{/if}}
+</div>
+
+<div>
+  {{nb-button text="show/hide" type="raised-icon" icon="check" iconColor="white"  on-tap=(action "toggleShowing"  )
+              text-color="rgb(38, 126, 213)" }}
+
+  {{#if showing}}
+    {{nb-button text="OK" type="raised-icon"  on-tap=(action "alert" "bob" ) text-color="rgb(38, 126, 213)"
+                icon="check" iconColor="grey"}}
+
+    {{nb-button text="test button" type="raised-icon" on-tap=(action "alert")   text-color="green" icon="check"
+                iconColor="grey" }}
+
+    {{nb-button text="test button" type="raised-icon" on-tap=(action "alert") disabled=true icon="check"
+                iconColor="grey" }}
+
+    {{nb-button text="test button" type="raised-icon"  on-tap=(action "alert" "bob" ) text-color="white"
+                background-color="#1976D2" focused-background-color="#1976D2" focused-text-color="white"
+                pressed-text-color="white" pressed-background-color="#1976D2" icon="check" iconColor="white"}}
+
+    {{nb-button text="test button" type="raised-icon" on-tap=(action "alert") theme=themes.DEFAULT icon="check"
+                iconColor="grey" ink=false}}
+  {{/if}}
+</div>
+
+{{nullbase-theme-initializer contextMenu=false }}
+
+
