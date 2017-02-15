@@ -2,17 +2,17 @@ import _ from "npm:lodash";
 import Ember from 'ember';
 import ThemeHandlerMixin from 'nullbase-theme-service/mixins/nullbase-theme-handler';
 
-var ThemeHandler = Ember.Object.extend(ThemeHandlerMixin,{
+var ThemeHandler = Ember.Object.extend(ThemeHandlerMixin, {
 
-  className:'nb-button',
+  className: 'nb-button',
   _insertedStyles: [],
   properties: {
 
     'focused-background-color': {
-      setGlobalCSSRule( themeProperties ,selectorForThemeContext){
-        Ember.assert('The value of themeProperties must be an object with keys for each button type.',_.isObject(themeProperties));
+      setGlobalCSSRule( themeProperties, selectorForThemeContext ){
+        Ember.assert('The value of themeProperties must be an object with keys for each button type.', _.isObject(themeProperties));
         let self = this;
-        _.forIn(themeProperties,function(color,buttonTypeClass){
+        _.forIn(themeProperties, function ( color, buttonTypeClass ) {
           let rule = `.nb-button${selectorForThemeContext}.${buttonTypeClass}:focus .inner { 
                       background:${color};
                       }`;
@@ -27,12 +27,11 @@ var ThemeHandler = Ember.Object.extend(ThemeHandlerMixin,{
     },
 
 
-
     'background-color': {
-      setGlobalCSSRule( themeProperties ,selectorForThemeContext){
-        Ember.assert('The value of themeProperties must be an object with keys for each button type.',_.isObject(themeProperties));
+      setGlobalCSSRule( themeProperties, selectorForThemeContext ){
+        Ember.assert('The value of themeProperties must be an object with keys for each button type.', _.isObject(themeProperties));
         let self = this;
-        _.forIn(themeProperties,function(color,buttonTypeClass){
+        _.forIn(themeProperties, function ( color, buttonTypeClass ) {
           let rule = `.nb-button${selectorForThemeContext}.${buttonTypeClass} .inner  { 
                       background-color:${color};
                     }`;
@@ -47,10 +46,10 @@ var ThemeHandler = Ember.Object.extend(ThemeHandlerMixin,{
     },
 
     'ink-color': {
-      setGlobalCSSRule( themeProperties ,selectorForThemeContext){
-        Ember.assert('The value of themeProperties must be an object with keys for each button type.',_.isObject(themeProperties));
+      setGlobalCSSRule( themeProperties, selectorForThemeContext ){
+        Ember.assert('The value of themeProperties must be an object with keys for each button type.', _.isObject(themeProperties));
         let self = this;
-        _.forIn(themeProperties,function(color,buttonTypeClass){
+        _.forIn(themeProperties, function ( color, buttonTypeClass ) {
           let rule = `.nb-button${selectorForThemeContext}.${buttonTypeClass} .inner .ink.inkColor { 
                       background:${color};
                     }`;
@@ -70,11 +69,11 @@ var ThemeHandler = Ember.Object.extend(ThemeHandlerMixin,{
       }
     },
     'text-color': {
-      setGlobalCSSRule( themeProperties ,selectorForThemeContext){
-        Ember.assert('The value of themeProperties must be an object with keys for each button type.',_.isObject(themeProperties));
+      setGlobalCSSRule( themeProperties, selectorForThemeContext ){
+        Ember.assert('The value of themeProperties must be an object with keys for each button type.', _.isObject(themeProperties));
         let self = this;
-        _.forIn(themeProperties,function(color,buttonTypeClass){
-            let rule = `.nb-button${selectorForThemeContext}.${buttonTypeClass} .inner .button-text { 
+        _.forIn(themeProperties, function ( color, buttonTypeClass ) {
+          let rule = `.nb-button${selectorForThemeContext}.${buttonTypeClass} .inner .button-text { 
                       color:${color};
                     }`;
 
@@ -95,11 +94,10 @@ var ThemeHandler = Ember.Object.extend(ThemeHandlerMixin,{
 
 
     'focused-text-color': {
-      setGlobalCSSRule( themeProperties ,selectorForThemeContext){
-        Ember.assert('The value of themeProperties must be an object with keys for each button type.',_.isObject(themeProperties));
+      setGlobalCSSRule( themeProperties, selectorForThemeContext ){
+        Ember.assert('The value of themeProperties must be an object with keys for each button type.', _.isObject(themeProperties));
         let self = this;
-        _.forIn(themeProperties,function(color,buttonTypeClass){
-
+        _.forIn(themeProperties, function ( color, buttonTypeClass ) {
 
 
           let rule = `.nb-button${selectorForThemeContext}.${buttonTypeClass}:focus .inner .button-text { 
@@ -120,10 +118,10 @@ var ThemeHandler = Ember.Object.extend(ThemeHandlerMixin,{
 
 
     'pressed-background-color': {
-      setGlobalCSSRule( themeProperties ,selectorForThemeContext){
-        Ember.assert('The value of themeProperties must be an object with keys for each button type.',_.isObject(themeProperties));
+      setGlobalCSSRule( themeProperties, selectorForThemeContext ){
+        Ember.assert('The value of themeProperties must be an object with keys for each button type.', _.isObject(themeProperties));
         let self = this;
-        _.forIn(themeProperties,function(color,buttonTypeClass){
+        _.forIn(themeProperties, function ( color, buttonTypeClass ) {
           let rule = `.nb-button${selectorForThemeContext}.${buttonTypeClass}.pressed .inner  { 
                       background-color:${color};
                     }`;
@@ -138,10 +136,10 @@ var ThemeHandler = Ember.Object.extend(ThemeHandlerMixin,{
 
 
     'pressed-text-color': {
-      setGlobalCSSRule( themeProperties ,selectorForThemeContext){
-        Ember.assert('The value of themeProperties must be an object with keys for each button type.',_.isObject(themeProperties));
+      setGlobalCSSRule( themeProperties, selectorForThemeContext ){
+        Ember.assert('The value of themeProperties must be an object with keys for each button type.', _.isObject(themeProperties));
         let self = this;
-        _.forIn(themeProperties,function(color,buttonTypeClass){
+        _.forIn(themeProperties, function ( color, buttonTypeClass ) {
           let rule = `.nb-button${selectorForThemeContext}.${buttonTypeClass}.pressed .inner  .button-text { 
                       color:${color};
                     }`;
@@ -157,9 +155,7 @@ var ThemeHandler = Ember.Object.extend(ThemeHandlerMixin,{
 });
 
 
-
 export function initialize( application ) {
-  console.log('Initializing nb-button-theme-init');
   application.register('nb-button-theme-init:main', ThemeHandler, { instantiate: true });
   application.inject('component:nb-button', '_themeHandler', 'nb-button-theme-init:main');
 }
